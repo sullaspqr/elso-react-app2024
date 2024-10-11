@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+//A hagyományos function App() helyett:
+
+export function App() {
+  //ha az index.js-ben az App csak simán van importálva, akkor:
+  // export default function App() -ként működik csak! Vagy simán alul az export default App;-ként!
   const [isActive, setActive] = useState(true);
   const [isDarkMode] = useState(window.matchMedia('(prefers-color-scheme: dark)').matches);
   const backgroundColor = !isDarkMode ? "white" : "black";
@@ -52,4 +56,3 @@ function BoxComponent(props) {
   );
 }
 
-export default App;
